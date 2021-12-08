@@ -26,7 +26,7 @@ def main(eventos_segundo,cant_atributos,TCP_SOCKET_CLIENTE):
 			time_aux=time()
 			eventos = generar_evento(eventos_segundo,cant_atributos)
 			TCP_SOCKET_CLIENTE.send(eventos.encode())
-			#print("[°]",time_aux,"-",eventos)
+			print("[°]",time_aux,"-",eventos)
 	return
 
 #49152-6535 puertos disponibles
