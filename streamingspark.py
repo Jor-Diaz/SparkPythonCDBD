@@ -72,8 +72,7 @@ def memory_usage_psutil():
 def apriori(aux_particiones):
   print(aux_particiones,"first")
   print(type(aux_particiones),"first")
-  print(aux)
-  print(type(aux))
+
   return True
   print("INIT")
   NCLOSURES = 0
