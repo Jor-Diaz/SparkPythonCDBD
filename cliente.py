@@ -40,7 +40,7 @@ opcion=""
 print("[°]Conexión establecida con el servidor en el puerto "+str(port))
 print("\n")
 while True: 
-	main(5,10)
+	main(5,10,TCP_SOCKET_CLIENTE)
 TCP_SOCKET_CLIENTE.close()#terminamos la conexion 	
 print("\n")
 print("[°] Conexion TCP terminada")
