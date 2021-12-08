@@ -11,11 +11,11 @@ lines = ssc.socketTextStream("localhost",9090)
 
 mayor=[]
 menor=[]
-words = lines.filter(lambda line: len(line)>10 )
+words = lines.filter(lambda line: len(line)>9 )
 pairs = words.map(lambda word: (word, 1))
 wordCounts = pairs.reduceByKey(lambda x, y: x + y)
 
-wordCounts.pprint() 
+wordCounts.print() 
 
 ssc.start()
 ssc.awaitTermination()
