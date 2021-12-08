@@ -70,41 +70,45 @@ def memory_usage_psutil():
 
 
 def apriori(aux_particiones):
-  print(aux_particiones,"first")
-  print(type(aux_particiones),"first")
+	print("#####################")
+	print(aux_particiones,"first")
+	print(type(aux_particiones),"first")
+	print("-------------------------")
+	for i in aux_particiones:
+		print(i)
+	print("#####################")
+	return True
+	print("INIT")
+	NCLOSURES = 0
+	start_time = time()     
+	path = "apriori"
+	ctx=[]
+	for i in aux_particiones:
+	  linea=i.split("-")
+	  conjunto_aux={}
+	  for i in linea:
+	    conjunto.add(int(i))
+	  ctx.append(conjunto)
+	M = set(reduce(set.union, ctx))
 
-  return True
-  print("INIT")
-  NCLOSURES = 0
-  start_time = time()     
-  path = "apriori"
-  ctx=[]
-  for i in aux_particiones:
-      linea=i.split("-")
-      conjunto_aux={}
-      for i in linea:
-        conjunto.add(int(i))
-      ctx.append(conjunto)
-  M = set(reduce(set.union, ctx))
+	FC_sigma,NCLOSURES,memoria = a_priori_closed(ctx, M, 0,NCLOSURES)
+	time=time()-start_time
+	print("END")
+	print(time)
 
-  FC_sigma,NCLOSURES,memoria = a_priori_closed(ctx, M, 0,NCLOSURES)
-  time=time()-start_time
-  print("END")
-  print(time)
+	results = {
+	  'n_results' : len(FC_sigma),
+	  'n_closures' : NCLOSURES,
+	  'exec_time' : time,   
+	  'memory_info': memoria
+	}
 
-  results = {
-      'n_results' : len(FC_sigma),
-      'n_closures' : NCLOSURES,
-      'exec_time' : time,   
-      'memory_info': memoria
-  }
-
-  d = datetime.now()
-  timestamp = '{}{}{}-{}-{}-{}'.format(d.year, d.month, d.day, d.hour, d.minute, d.second)
-  fname = path[path.rfind('/'):path.rfind('.')]
-  fname=fname[1:]
-  with open('results/{}-{}-{}.json'.format("apriori",fname, timestamp) , 'w') as fout:
-      json.dump(results, fout)
+	d = datetime.now()
+	timestamp = '{}{}{}-{}-{}-{}'.format(d.year, d.month, d.day, d.hour, d.minute, d.second)
+	fname = path[path.rfind('/'):path.rfind('.')]
+	fname=fname[1:]
+	with open('results/{}-{}-{}.json'.format("apriori",fname, timestamp) , 'w') as fout:
+	  json.dump(results, fout)
   return FC_sigma
 
 

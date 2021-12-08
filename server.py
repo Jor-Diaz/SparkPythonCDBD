@@ -25,9 +25,11 @@ def send_tweets_to_spark(tcp_connection):
     for evento in eventos:
         try:                    
             tcp_connection.send((evento + '\n').encode())
+            return True
         except:
             e = sys.exc_info()[0]
             print("Error: %s" % e)
+            return False
 
 
 #49152-6535 puertos disponibles
@@ -42,9 +44,11 @@ TCP_SOCKET_CLIENTE, addr = TCP_SOCKET_SERVIDOR .accept() # Establecemos la conex
 print('[°] Conexión establecida con el cliente')
 time_aux=time() 
 while True:
-    if time()-time_aux>1:
+    if time()-time_aux>2:
         time_aux=time()    
-        send_tweets_to_spark(TCP_SOCKET_CLIENTE)
+        aux=send_tweets_to_spark(TCP_SOCKET_CLIENTE)
+        if aux==False:
+            break
         print("\n")
         print("[°] Datos Enviados a Spark ")
         print("\n")
