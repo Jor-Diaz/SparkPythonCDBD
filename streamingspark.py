@@ -79,11 +79,11 @@ def apriori(aux_particiones):
 	  linea=i.split("-")
 	  conjunto_aux=set()
 	  for i in linea:
-	    conjunto_aux.add(int(i))
+	  	if i != ""
+	    	conjunto_aux.add(int(i))
 	  ctx.append(conjunto_aux)
 	print(ctx)	
-	print("#####################")
-	return True
+	print("#####################")	
 	print("INIT")
 	NCLOSURES = 0
 	start_time = time()     
