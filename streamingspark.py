@@ -86,20 +86,20 @@ def apriori(aux_particiones):
 	print("#####################")	
 	print("INIT")
 	NCLOSURES = 0
-	start_time = time()     
+	#start_time = time()     
 	path = "apriori"
 	
 	M = set(reduce(set.union, ctx))
 
 	FC_sigma,NCLOSURES,memoria = a_priori_closed(ctx, M, 0,NCLOSURES)
-	time=time()-start_time
+	#time=time()-start_time
 	print("END")
 	print(time)
 
 	results = {
 	  'n_results' : len(FC_sigma),
 	  'n_closures' : NCLOSURES,
-	  'exec_time' : time,   
+	  'exec_time' : "hola",   
 	  'memory_info': memoria
 	}
 
