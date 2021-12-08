@@ -76,12 +76,12 @@ def apriori(aux_particiones):
 	print("-------------------------")
 	ctx=[]
 	for i in aux_particiones:
-	  linea=i.split("-")
-	  conjunto_aux=set()
-	  for i in linea:
-	  	if i != "":
-	    	conjunto_aux.add(int(i))
-	  ctx.append(conjunto_aux)
+		linea=i.split("-")
+		conjunto_aux=set()
+		for i in linea:
+			if i != "":
+				conjunto_aux.add(int(i))
+		ctx.append(conjunto_aux)
 	print(ctx)	
 	print("#####################")	
 	print("INIT")
