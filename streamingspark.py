@@ -117,7 +117,7 @@ def apriori(aux_particiones):
 
 #Inicializar contexto
 sc = SparkContext("local[2]","NetworkWordCount")
-ssc = StreamingContext(sc,5)
+ssc = StreamingContext(sc,2)
 
 lines = ssc.socketTextStream("localhost",9090)
 
@@ -127,7 +127,8 @@ mayor=[]
 menor=[]
 aux_particiones=[]
 for i in range(1,19,2):
-	aux_particiones.append(lines.filter(lambda line:  len(line)>i-1))	 
+	aux=lines.filter(lambda line:  len(line)>i-1)
+	aux_particiones.append(aux)
 
 #for i in aux_particiones:
 #words = lines.flatMap(lambda line: line.split("-"))
