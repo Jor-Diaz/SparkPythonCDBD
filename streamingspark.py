@@ -77,7 +77,7 @@ def apriori(aux_particiones):
 	ctx=[]
 	for i in aux_particiones:
 	  linea=i.split("-")
-	  conjunto_aux={}
+	  conjunto_aux=set()
 	  for i in linea:
 	    conjunto_aux.add(int(i))
 	  ctx.append(conjunto_aux)
