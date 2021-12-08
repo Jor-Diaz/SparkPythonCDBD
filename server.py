@@ -24,12 +24,10 @@ def send_tweets_to_spark(tcp_connection):
     eventos = generar_evento(5,10)    
     for evento in eventos:
         try:                    
-            tcp_connection.send((evento + '\n').encode())
-            return True
+            tcp_connection.send((evento + '\n').encode())            
         except:
             e = sys.exc_info()[0]
-            print("Error: %s" % e)
-            return False
+            print("Error: %s" % e)            
 
 
 #49152-6535 puertos disponibles
@@ -46,9 +44,7 @@ time_aux=time()
 while True:
     if time()-time_aux>1:
         time_aux=time()    
-        aux=send_tweets_to_spark(TCP_SOCKET_CLIENTE)
-        if aux==False:
-            break
+        aux=send_tweets_to_spark(TCP_SOCKET_CLIENTE)        
         print("\n")
         print("[°] Datos Enviados a Spark ")
         print("\n")
