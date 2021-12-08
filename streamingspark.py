@@ -95,13 +95,11 @@ def apriori(aux_particiones):
 
 	FC_sigma,NCLOSURES = a_priori_closed(ctx, M, 0,NCLOSURES)
 	time=time()-start_time
-	print("END")	
-	memoria="meme"
+	print("END")		
 	results = {
 	  'n_results' : len(FC_sigma),
 	  'n_closures' : NCLOSURES,
-	  'exec_time' : time,   
-	  'memory_info': memoria
+	  'exec_time' : time
 	}
 
 	d = datetime.now()
@@ -122,7 +120,7 @@ def aux_ctx(line):
 
 #Inicializar contexto
 sc = SparkContext("local[2]","NetworkWordCount")
-ssc = StreamingContext(sc,5)
+ssc = StreamingContext(sc,10)
 
 lines = ssc.socketTextStream("localhost",9090)
 
