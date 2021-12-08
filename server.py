@@ -44,7 +44,7 @@ TCP_SOCKET_CLIENTE, addr = TCP_SOCKET_SERVIDOR .accept() # Establecemos la conex
 print('[°] Conexión establecida con el cliente')
 time_aux=time() 
 while True:
-    if time()-time_aux>2:
+    if time()-time_aux>1:
         time_aux=time()    
         aux=send_tweets_to_spark(TCP_SOCKET_CLIENTE)
         if aux==False:
