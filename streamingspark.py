@@ -74,14 +74,6 @@ def apriori(aux_particiones):
 	print(aux_particiones,"first")
 	print(type(aux_particiones),"first")
 	print("-------------------------")
-	for i in aux_particiones:
-		print(i)
-	print("#####################")
-	return True
-	print("INIT")
-	NCLOSURES = 0
-	start_time = time()     
-	path = "apriori"
 	ctx=[]
 	for i in aux_particiones:
 	  linea=i.split("-")
@@ -89,6 +81,14 @@ def apriori(aux_particiones):
 	  for i in linea:
 	    conjunto.add(int(i))
 	  ctx.append(conjunto)
+	print(ctx)	
+	print("#####################")
+	return True
+	print("INIT")
+	NCLOSURES = 0
+	start_time = time()     
+	path = "apriori"
+	
 	M = set(reduce(set.union, ctx))
 
 	FC_sigma,NCLOSURES,memoria = a_priori_closed(ctx, M, 0,NCLOSURES)
