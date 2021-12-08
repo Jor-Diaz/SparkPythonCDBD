@@ -1,6 +1,6 @@
 from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
-from .apriori import apriori
+from apriori import apriori
 
 
 #Inicializar contexto
