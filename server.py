@@ -21,7 +21,7 @@ def generar_evento(eventos_segundo,cant_atributos):
     return mensaje
 
 def send_tweets_to_spark(tcp_connection):
-    eventos = generar_evento(20,20)    
+    eventos = generar_evento(20,12)    
     for evento in eventos:
         try:                    
             tcp_connection.send((evento + '\n').encode())

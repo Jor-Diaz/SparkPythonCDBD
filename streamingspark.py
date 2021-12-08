@@ -131,8 +131,8 @@ lines = ssc.socketTextStream("localhost",9090)
 
 
 aux=lines.foreachRDD(aux_ctx)
-print("jajajajaaaaaaaaaaaaaaaaaaaaa")
-print(aux)
+print("///////////////////")
+print("[°] Trabajo Realizado ")
 print("////////////////////////")
 
 #lines=lines.filter(lambda line: len(line)>1)
