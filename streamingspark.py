@@ -122,7 +122,7 @@ def aux_ctx(line):
 
 #Inicializar contexto
 sc = SparkContext("local[2]","NetworkWordCount")
-ssc = StreamingContext(sc,2)
+ssc = StreamingContext(sc,5)
 
 lines = ssc.socketTextStream("localhost",9090)
 
