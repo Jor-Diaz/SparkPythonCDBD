@@ -19,13 +19,13 @@ def generar_evento(eventos_segundo,cant_atributos):
 def send_tweets_to_spark(tcp_connection):
     eventos = generar_evento(5,10)
     for evento in eventos:
-    try:    
-    print("Evento: " + evento)
-    print ("------------------------------------------")
-    tcp_connection.send(evento + '\n')
-    except:
-    e = sys.exc_info()[0]
-    print("Error: %s" % e)
+        try:    
+            print("Evento: " + evento)
+            print ("------------------------------------------")
+            tcp_connection.send(evento + '\n')
+        except:
+            e = sys.exc_info()[0]
+            print("Error: %s" % e)
 
 TCP_IP = "localhost"
 TCP_PORT = 9009
