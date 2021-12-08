@@ -14,16 +14,15 @@ def generar_evento(eventos_segundo,cant_atributos):
             if j+1!=cant_atributos:
                 aux_constructor="-"         
             if aux>prob:                
-                atributos+=str(j)+aux_constructor                   
+                atributos+=str(j)+aux_constructor                               
         mensaje.append(atributos)
+        print("[°] Nuevo Caso Registrado: " + atributos)
     return mensaje
 
 def send_tweets_to_spark(tcp_connection):
-    eventos = generar_evento(5,10)
+    eventos = generar_evento(5,10)    
     for evento in eventos:
-        try:    
-            print("Evento: " + evento)
-            print ("------------------------------------------")
+        try:                    
             tcp_connection.send((evento + '\n').encode())
         except:
             e = sys.exc_info()[0]
@@ -45,6 +44,7 @@ while True:
     if time()-time_aux>1:
         time_aux=time()    
         send_tweets_to_spark(TCP_SOCKET_CLIENTE)
+        print("[°] Datos Enviados a Spark ")
 print("[°] Apagando servidor")       
 TCP_SOCKET_CLIENTE.close()#terminamos la conexion TCP
 
