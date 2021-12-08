@@ -99,14 +99,13 @@ def apriori(aux_particiones):
 	results = {
 	  'n_results' : len(FC_sigma),
 	  'n_closures' : NCLOSURES,
-	  'exec_time' : "hola",   
+	  'exec_time' : "time",   
 	  'memory_info': memoria
 	}
 
 	d = datetime.now()
 	timestamp = '{}{}{}-{}-{}-{}'.format(d.year, d.month, d.day, d.hour, d.minute, d.second)
-	fname = path[path.rfind('/'):path.rfind('.')]
-	fname=fname[1:]
+	fname="test"	
 	with open('results/{}-{}-{}.json'.format("apriori",fname, timestamp) , 'w') as fout:
 	  json.dump(results, fout)
 
