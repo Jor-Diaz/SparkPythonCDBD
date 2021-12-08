@@ -19,6 +19,13 @@
 					<li>Número de Conceptos Formales Detectados: <b>{{n_resultados}}</b></li>
 					<li>Número de Clausuras Calculadas: <b>{{n_closures}}</b></li>
 					<li>Tiempo de Ejecución: <b>{{exec_time}}</b></li>
+					<li>Conceptos Formales: 
+						<ul>
+							{% for i in lineas %}
+								<li> {{i}}</li>
+							{% endfor %}
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</div>
