@@ -125,10 +125,10 @@ lines = ssc.socketTextStream("localhost",9090)
 
 mayor=[]
 menor=[]
-aux_particiones=[]
-for i in range(1,19,2):
-	aux=lines.filter(lambda line:  len(line)>i-1)
-	aux_particiones.append(aux)
+#aux_particiones=[]
+#for i in range(1,19,2):
+lines=lines.filter(lambda line: len(line)>1)
+#	aux_particiones.append(aux)
 
 #for i in aux_particiones:
 #words = lines.flatMap(lambda line: line.split("-"))
