@@ -15,7 +15,7 @@ words = lines.filter(lambda line: len(line)>9 )
 pairs = words.map(lambda word: (word, 1))
 wordCounts = pairs.reduceByKey(lambda x, y: x + y)
 
-wordCounts.print() 
+wordCounts.pprint() 
 
 ssc.start()
 ssc.awaitTermination()
