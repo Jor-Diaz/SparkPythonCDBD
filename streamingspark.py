@@ -117,12 +117,10 @@ def aux_ctx(line):
 	aux1=line.collect()
 	print(aux1)
 	print(type(aux1))
-	conjunto={}
-	aux=line.split("-")
-	for i in aux:
-		conjunto.add(int(i))
-	return conjunto
-
+	if len(aux1)>0:
+		apriori(aux1)	
+		return True
+	return False
 
 #Inicializar contexto
 sc = SparkContext("local[2]","NetworkWordCount")
