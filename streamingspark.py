@@ -3,7 +3,7 @@ from pyspark.streaming import StreamingContext
 
 #Inicializar contexto
 sc = SparkContext("local[2]","NetworkWordCount")
-ssc = StreamingContext(sc,10)
+ssc = StreamingContext(sc,2)
 
 lines = ssc.socketTextStream("localhost",9090)
 

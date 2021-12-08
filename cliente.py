@@ -1,6 +1,7 @@
 import socket
 from time import time
 import random
+import os 
 
 def generar_evento(eventos_segundo,cant_atributos):
 	mensaje=""
@@ -18,17 +19,22 @@ def generar_evento(eventos_segundo,cant_atributos):
 	return mensaje
 
 	
-def main(eventos_segundo,cant_atributos,TCP_SOCKET_CLIENTE):
+def main(eventos_segundo,cant_atributos):
 	print("[°] Iniciando Generador de Eventos")
-	time_aux=time()
+	os.system('nc -lk 9090')
+	time_aux=time()	
 	while True:
 		if time()-time_aux>1:
 			time_aux=time()
 			eventos = generar_evento(eventos_segundo,cant_atributos)
-			TCP_SOCKET_CLIENTE.send(eventos.encode())
-			print("[°]",time_aux,"-",eventos)
+			os.system(eventos+"\n")
+			#TCP_SOCKET_CLIENTE.send(eventos.encode())
+			#print("[°]",time_aux,"-",eventos)
 	return
 
+main(5,10)
+
+"""
 #49152-6535 puertos disponibles
 host='localhost'
 port = 9090 #Puerto ocupado en TCP
@@ -44,3 +50,4 @@ while True:
 TCP_SOCKET_CLIENTE.close()#terminamos la conexion 	
 print("\n")
 print("[°] Conexion TCP terminada")
+"""
