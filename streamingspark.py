@@ -18,7 +18,7 @@ aux_particiones=[]
 #aux_particiones.append(lines.filter(lambda line: len(line)<i and len(line)>i-1))	 
 
 #for i in aux_particiones:
-resultado=lines.reduce=apriori(i)
+resultado=lines.reduce(apriori)
 #pairs = words.map(lambda word: (word, 1))
 #wordCounts = pairs.reduceByKey(lambda x, y: x + y) 
 
