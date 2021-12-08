@@ -94,13 +94,16 @@ def apriori(aux_particiones):
 	M = set(reduce(set.union, ctx))
 
 	FC_sigma,NCLOSURES = a_priori_closed(ctx, M, 0,NCLOSURES)
-	time=time()-start_time
+	time=time()-start_time	
+	a=[]
+	for i in FC_sigma:
+		a.append(str(i))
 	print("END")		
 	results = {
 	  'n_results' : len(FC_sigma),
 	  'n_closures' : NCLOSURES,
 	  'exec_time' : time,
-	  'data':FC_sigma
+	  'data':a
 	}
 
 	d = datetime.now()
