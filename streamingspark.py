@@ -119,8 +119,8 @@ def aux_ctx(line):
 	print(type(aux1))
 	if len(aux1)>0:
 		apriori(aux1)	
-		return True
-	return False
+		return line
+	return line
 
 #Inicializar contexto
 sc = SparkContext("local[2]","NetworkWordCount")
