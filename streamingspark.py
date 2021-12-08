@@ -109,7 +109,9 @@ def apriori(aux_particiones):
 	fname=fname[1:]
 	with open('results/{}-{}-{}.json'.format("apriori",fname, timestamp) , 'w') as fout:
 	  json.dump(results, fout)
-  	return FC_sigma
+
+	  
+	return FC_sigma
 
 
 
