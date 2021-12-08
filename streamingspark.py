@@ -132,7 +132,7 @@ lines=lines.filter(lambda line: len(line)>1)
 
 #for i in aux_particiones:
 #words = lines.flatMap(lambda line: line.split("-"))
-resultado=lines.reduce(apriori(aux_particiones[3]))
+resultado=lines.reduce(apriori(lines))
 #pairs = words.map(lambda word: (word, 1))
 #wordCounts = pairs.reduceByKey(lambda x, y: x + y) 
 
