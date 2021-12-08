@@ -125,7 +125,7 @@ aux_particiones=[]
 #aux_particiones.append(lines.filter(lambda line: len(line)<i and len(line)>i-1))	 
 
 #for i in aux_particiones:
-words = lines.flatMap(lambda line: line.split("-"))
+#words = lines.flatMap(lambda line: line.split("-"))
 lines=words.repartition(1)
 resultado=lines.reduce(apriori)
 #pairs = words.map(lambda word: (word, 1))
