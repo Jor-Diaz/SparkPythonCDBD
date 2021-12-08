@@ -70,6 +70,8 @@ def memory_usage_psutil():
 
 
 def apriori(aux_particiones):
+	from time import time
+	start_time = time()     
 	print("#####################")
 	print(aux_particiones,"first")
 	print(type(aux_particiones),"first")
@@ -86,20 +88,19 @@ def apriori(aux_particiones):
 	print("#####################")	
 	print("INIT")
 	NCLOSURES = 0
-	#start_time = time()     
+	
 	path = "apriori"
 	
 	M = set(reduce(set.union, ctx))
 
 	FC_sigma,NCLOSURES = a_priori_closed(ctx, M, 0,NCLOSURES)
-	#time=time()-start_time
-	print("END")
-	print(time)
+	time=time()-start_time
+	print("END")	
 	memoria="meme"
 	results = {
 	  'n_results' : len(FC_sigma),
 	  'n_closures' : NCLOSURES,
-	  'exec_time' : "time",   
+	  'exec_time' : time,   
 	  'memory_info': memoria
 	}
 
@@ -107,9 +108,8 @@ def apriori(aux_particiones):
 	timestamp = '{}{}{}-{}-{}-{}'.format(d.year, d.month, d.day, d.hour, d.minute, d.second)
 	fname="test"	
 	with open('results/{}-{}-{}.json'.format("apriori",fname, timestamp) , 'w') as fout:
-	  json.dump(results, fout)
-	fout.save()
-	return 	 
+	  json.dump(results, fout)	 
+	return 
 
 def aux_ctx(line):
 	aux1=line.collect()
