@@ -108,9 +108,8 @@ def apriori(aux_particiones):
 	fname="test"	
 	with open('results/{}-{}-{}.json'.format("apriori",fname, timestamp) , 'w') as fout:
 	  json.dump(results, fout)
-
-	  
-	return FC_sigma
+	fout.save()
+	return 	 
 
 def aux_ctx(line):
 	aux1=line.collect()
