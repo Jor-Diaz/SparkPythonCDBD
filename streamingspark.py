@@ -126,7 +126,7 @@ aux_particiones=[]
 
 #for i in aux_particiones:
 #words = lines.flatMap(lambda line: line.split("-"))
-lines=words.repartition(1)
+lines=lines.repartition(1)
 resultado=lines.reduce(apriori)
 #pairs = words.map(lambda word: (word, 1))
 #wordCounts = pairs.reduceByKey(lambda x, y: x + y) 
