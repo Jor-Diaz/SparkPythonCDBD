@@ -56,8 +56,8 @@ def a_priori_closed(T, I, sigma,NCLOSURES):
         if candidate.issubset(t):
           C[i+1][candidate] += 1    
     i += 1
-    memoria=memory_usage_psutil()
-  return sorted(list(chain(*L.values())), key=len),NCLOSURES,memoria
+    #memoria=memory_usage_psutil()
+  return sorted(list(chain(*L.values())), key=len),NCLOSURES,
 
 def memory_usage_psutil():
     # return the memory usage in MB
