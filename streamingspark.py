@@ -139,16 +139,16 @@ aux=lines.foreachRDD(aux_ctx)
 print("jajajajaaaaaaaaaaaaaaaaaaaaa")
 print("////////////////////////")
 print(aux)
-lines=lines.filter(lambda line: len(line)>1)
+#lines=lines.filter(lambda line: len(line)>1)
 #	aux_particiones.append(aux)
 
 #for i in aux_particiones:
 #words = lines.flatMap(lambda line: line.split("-"))
-resultado=lines.reduce(apriori(aux))
+#resultado=lines.reduce(apriori(aux))
 #pairs = words.map(lambda word: (word, 1))
 #wordCounts = pairs.reduceByKey(lambda x, y: x + y) 
 
-resultado.pprint() 
+aux.pprint() 
 
 ssc.start()
 ssc.awaitTermination()
