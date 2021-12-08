@@ -24,7 +24,7 @@ def send_tweets_to_spark(tcp_connection):
         try:    
             print("Evento: " + evento)
             print ("------------------------------------------")
-            tcp_connection.send(evento + '\n')
+            tcp_connection.send((evento + '\n').encode())
         except:
             e = sys.exc_info()[0]
             print("Error: %s" % e)
