@@ -10,7 +10,9 @@ lines = ssc.socketTextStream("localhost",9090)
 def split_largo_apriori(line):
 	return
 
-words = lines.flatMap(lambda line: line.split("-") if (len(line>10)))
+mayor=[]
+menor=[]
+words = lines.flatMap(lambda line: line.split("-") if (len(line)>10))
 pairs = words.map(lambda word: (word, 1))
 wordCounts = pairs.reduceByKey(lambda x, y: x + y)
 
