@@ -44,7 +44,9 @@ while True:
     if time()-time_aux>1:
         time_aux=time()    
         send_tweets_to_spark(TCP_SOCKET_CLIENTE)
+        print("\n")
         print("[°] Datos Enviados a Spark ")
+        print("\n")
 print("[°] Apagando servidor")       
 TCP_SOCKET_CLIENTE.close()#terminamos la conexion TCP
 
