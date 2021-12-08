@@ -4,7 +4,7 @@ import random
 import sys
 
 def generar_evento(eventos_segundo,cant_atributos):
-    mensaje=""
+    mensaje=[]
     prob=6
     for i in range(0,eventos_segundo):      
         atributos=""
@@ -15,7 +15,7 @@ def generar_evento(eventos_segundo,cant_atributos):
                 aux_constructor="-"         
             if aux>prob:                
                 atributos+=str(j)+aux_constructor                   
-        mensaje+="|"+atributos
+        mensaje.append(atributos)
     return mensaje
 
 def send_tweets_to_spark(tcp_connection):
