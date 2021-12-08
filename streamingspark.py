@@ -114,6 +114,9 @@ def apriori(aux_particiones):
 	return FC_sigma
 
 def aux_ctx(line):
+	aux1=line.collect()
+	print(aux1)
+	print(type(aux1))
 	conjunto={}
 	aux=line.split("-")
 	for i in aux:
