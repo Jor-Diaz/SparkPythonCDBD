@@ -91,11 +91,11 @@ def apriori(aux_particiones):
 	
 	M = set(reduce(set.union, ctx))
 
-	FC_sigma,NCLOSURES,memoria = a_priori_closed(ctx, M, 0,NCLOSURES)
+	FC_sigma,NCLOSURES = a_priori_closed(ctx, M, 0,NCLOSURES)
 	#time=time()-start_time
 	print("END")
 	print(time)
-
+	memoria="meme"
 	results = {
 	  'n_results' : len(FC_sigma),
 	  'n_closures' : NCLOSURES,
