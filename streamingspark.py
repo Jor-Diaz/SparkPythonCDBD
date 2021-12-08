@@ -113,6 +113,12 @@ def apriori(aux_particiones):
 	  
 	return FC_sigma
 
+def aux_ctx(line):
+	conjunto={}
+	aux=line.split("-")
+	for i in aux:
+		conjunto.add(int(i))
+	return conjunto
 
 
 #Inicializar contexto
@@ -122,23 +128,12 @@ ssc = StreamingContext(sc,2)
 lines = ssc.socketTextStream("localhost",9090)
 
 
-def aux_ctx(line):
-	conjunto={}
-	aux=line.split("-")
-	for i in aux:
-		conjunto.add(int(i))
-	return conjunto
-
-
-mayor=[]
-menor=[]
-#aux_particiones=[]
-#for i in range(1,19,2):
 
 aux=lines.foreachRDD(aux_ctx)
 print("jajajajaaaaaaaaaaaaaaaaaaaaa")
-print("////////////////////////")
 print(aux)
+print("////////////////////////")
+
 #lines=lines.filter(lambda line: len(line)>1)
 #	aux_particiones.append(aux)
 
@@ -148,7 +143,7 @@ print(aux)
 #pairs = words.map(lambda word: (word, 1))
 #wordCounts = pairs.reduceByKey(lambda x, y: x + y) 
 
-aux.pprint() 
+#aux.pprint() 
 
 ssc.start()
 ssc.awaitTermination()
