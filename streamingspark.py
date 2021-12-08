@@ -99,7 +99,8 @@ def apriori(aux_particiones):
 	results = {
 	  'n_results' : len(FC_sigma),
 	  'n_closures' : NCLOSURES,
-	  'exec_time' : time
+	  'exec_time' : time,
+	  'data':FC_sigma
 	}
 
 	d = datetime.now()
