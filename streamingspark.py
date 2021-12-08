@@ -69,7 +69,12 @@ def memory_usage_psutil():
     return mem
 
 
-def apriori(aux_particiones):
+def apriori(aux_particiones,aux):
+  print(aux_particiones)
+  print(type(aux_particiones))
+  print(aux)
+  print(type(aux))
+  return
   print("INIT")
   NCLOSURES = 0
   start_time = time()     
@@ -107,7 +112,7 @@ def apriori(aux_particiones):
 
 #Inicializar contexto
 sc = SparkContext("local[2]","NetworkWordCount")
-ssc = StreamingContext(sc,20)
+ssc = StreamingContext(sc,5)
 
 lines = ssc.socketTextStream("localhost",9090)
 
