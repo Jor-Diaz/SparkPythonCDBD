@@ -3,18 +3,18 @@ from time import time
 import random
 
 def generar_evento(eventos_segundo,cant_atributos):
-	mensaje=[]
+	mensaje=""
 	prob=6
-	for i in range(0,eventos_segundo):
+	for i in range(0,eventos_segundo):		
 		atributos=""
 		for j in range(0,cant_atributos):
 			aux=random.randint(1,10)
 			aux_constructor=""
 			if j+1!=cant_atributos:
-				aux_constructor=" "			
+				aux_constructor="-"			
 			if aux>prob:				
 				atributos+=str(j)+aux_constructor					
-		mensaje.append(atributos)
+		mensaje+="|"+atributos
 	return mensaje
 
 	
