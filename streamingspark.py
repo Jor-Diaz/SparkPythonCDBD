@@ -69,7 +69,7 @@ def memory_usage_psutil():
     return mem
 
 
-def apriori(aux_particiones,aux):
+def apriori(aux_particiones):
   print(aux_particiones,"first")
   print(type(aux_particiones),"first")
   print(aux)
