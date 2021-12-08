@@ -135,7 +135,7 @@ menor=[]
 #aux_particiones=[]
 #for i in range(1,19,2):
 
-aux=lines.foreachRDD(lambda line: len(line)>1)
+aux=lines.foreachRDD(aux_ctx)
 print(aux)
 lines=lines.filter(lambda line: len(line)>1)
 #	aux_particiones.append(aux)
