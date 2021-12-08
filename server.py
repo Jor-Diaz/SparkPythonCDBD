@@ -1,6 +1,7 @@
 import socket
 from time import time
 import random
+import sys
 
 def generar_evento(eventos_segundo,cant_atributos):
     mensaje=""
