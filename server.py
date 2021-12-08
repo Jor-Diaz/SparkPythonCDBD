@@ -11,11 +11,8 @@ def generar_evento(eventos_segundo,cant_atributos):
         for j in range(0,cant_atributos):
             aux=random.randint(1,10)
             aux_constructor=""
-            if j+1!=cant_atributos:
-                if i+1 == eventos_segundo:
-                    aux_constructor=""         
-                else:
-                    aux_constructor="-"         
+            if j+1!=cant_atributos:                
+                aux_constructor="-"         
             if aux>prob:                
                 atributos+=str(j)+aux_constructor                               
 
